@@ -3,66 +3,37 @@
 @theme {
   --font-sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
 
-  --animate-apple-yellow-top: apple-yellow-top 1.5s ease-out 0.5s forwards;
-  --animate-apple-pink-one-top: apple-pink-one-top 2s ease-in-out forwards;
-  --animate-apple-pink-two-top: apple-pink-two-top 1.2s ease-in-out forwards;
-  --animate-apple-blue-top: apple-blue-top 1s ease 0.2s forwards;
-  --animate-apple-yellow-bottom: apple-yellow-bottom 1.5s ease-out 0.5s forwards;
-  --animate-apple-pink-one-bottom: apple-pink-one-bottom 2s ease-in-out forwards;
-  --animate-apple-pink-two-bottom: apple-pink-two-bottom 1.2s ease-in-out forwards;
-  --animate-apple-blue-bottom: apple-blue-bottom 1s ease 0.2s forwards;
+  --animate-border-stream-yellow: border-stream-yellow 1.5s ease-out 0.5s forwards;
+  --animate-border-stream-pink-one: border-stream-pink-one 2s ease-in-out forwards;
+  --animate-border-stream-pink-two: border-stream-pink-two 1.2s ease-in-out forwards;
+  --animate-border-stream-blue: border-stream-blue 1s ease 0.2s forwards;
 
-  @keyframes apple-yellow-top {
-    0% { top: -75px; right: 10vw; }
+  @keyframes border-stream-yellow {
+    0% { top: -75px; right: 10cqw; }
     50% { top: -30px; }
     100% { top: -30px; right: 0; }
   }
 
-  @keyframes apple-pink-one-top {
-    0% { top: -200px; transform: scaleX(0.5) translateX(0); }
-    25% { top: -110px; transform: scaleX(0.5) translateX(0); }
-    50% { top: -120px; transform: scaleX(2.25) translateX(10%); }
-    100% { top: -135px; background: #e44cbb; transform: scaleX(2.25) translateX(0); }
+  @keyframes border-stream-pink-one {
+    0% { top: -200px; transform: scaleX(50%) translateX(0); }
+    25% { top: -110px; transform: scaleX(50%) translateX(0); }
+    50% { top: -120px; transform: scaleX(225%) translateX(10%); }
+    100% { top: -135px; background: #e44cbb; transform: scaleX(225%) translateX(0); }
   }
 
-  @keyframes apple-pink-two-top {
-    0% { top: -200px; transform: scaleX(0.5) translateX(0); }
-    25% { top: -120px; transform: scaleX(0.7) translateX(-10%); }
-    50% { top: -130px; transform: scaleX(2.25) translateX(10%); }
-    100% { top: -135px; left: 0; background: #f55be4; transform: scaleX(2.25) translateX(0); }
+  @keyframes border-stream-pink-two {
+    0% { top: -200px; transform: scaleX(50%) translateX(0); }
+    25% { top: -120px; transform: scaleX(70%) translateX(-10%); }
+    50% { top: -130px; transform: scaleX(225%) translateX(10%); }
+    100% { top: -135px; left: 0; background: #f55be4; transform: scaleX(225%) translateX(0); }
   }
 
-  @keyframes apple-blue-top {
+  @keyframes border-stream-blue {
     0% { top: -100px; transform: translateX(0); }
     50% { top: -50px; transform: translateX(-15%); }
     100% { top: -50px; background: #019ffb; transform: translateX(0); }
   }
 
-  @keyframes apple-yellow-bottom {
-    0% { top: 100px; left: 10vw; }
-    50% { top: 55px; }
-    100% { top: 55px; left: 0; }
-  }
-
-  @keyframes apple-pink-one-bottom {
-    0% { top: 125px; transform: scaleX(0.5) translateX(0); }
-    25% { top: 35px; transform: scaleX(0.5) translateX(0); }
-    50% { top: 45px; transform: scaleX(2.25) translateX(-10%); }
-    100% { top: 60px; background: #e44cbb; transform: scaleX(2.25) translateX(0); }
-  }
-
-  @keyframes apple-pink-two-bottom {
-    0% { top: 125px; transform: scaleX(0.5) translateX(0); }
-    25% { top: 45px; transform: scaleX(0.7) translateX(10%); }
-    50% { top: 55px; transform: scaleX(2.25) translateX(-10%); }
-    100% { top: 60px; right: 0; background: #f55be4; transform: scaleX(2.25) translateX(0); }
-  }
-
-  @keyframes apple-blue-bottom {
-    0% { top: 100px; transform: translateX(0); }
-    50% { top: 50px; transform: translateX(15%); }
-    100% { top: 50px; background: #019ffb; transform: translateX(0); }
-  }
 }
 
 @layer base {
