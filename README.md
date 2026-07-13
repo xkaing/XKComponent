@@ -11,16 +11,18 @@ npm run dev
 
 ## 组件
 
-### Border Stream Light
+### Expanding Column Menu
 
-`src/components/border-stream-light.tsx`
+`src/components/expanding-column-menu.tsx`
 
-顶部边缘流光组件，由四个模糊椭圆色块、透明度和关键帧位移叠加构成。
-
-动画参数参考 `/Users/xkai/Desktop/border-stream-light` 中的原始 HTML/CSS。原实现的 `vw` 比例使用容器查询宽度单位映射，因此组件放入任意宽度的容器后仍能保持原始构图。
+全屏图片栏目菜单。桌面端和触屏端都只在点击栏目时展开，再次点击已展开栏目会恢复等分布局。栏目、图片、遮罩和文案使用 Motion 统一缓动，点击后立即响应。
 
 ```tsx
-<BorderStreamLight />
+<ExpandingColumnMenu
+  items={items}
+  expandedRatio={7}
+  onItemSelect={(item) => console.log(item.id)}
+/>
 ```
 
-父元素需使用相对定位并处理所需的边界裁剪。组件会绝对定位到父元素顶部。
+每个菜单项支持图片位置、竖排标签、详情文案和数据项配置。旧文案会先快速隐藏，新文案稍后与栏目形变重叠进入，避免切换时出现空窗。组件在窄屏下自动切换为纵向手风琴布局，并适配键盘焦点与减少动态效果偏好。

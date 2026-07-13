@@ -1,70 +1,93 @@
-import { useState } from 'react'
-import { BorderStreamLight } from './components/border-stream-light'
+import nightLordsImage from '../1.jpg'
+import ravenGuardImage from '../2.jpg'
+import imperialFistsImage from '../3.jpg'
+import ironWarriorsImage from '../4.jpg'
+import salamandersImage from '../5.jpg'
+import {
+  ExpandingColumnMenu,
+  type ExpandingColumnMenuItem,
+} from './components/expanding-column-menu'
+
+const menuItems: ExpandingColumnMenuItem[] = [
+  {
+    id: 'night-lords',
+    label: '夜之领主',
+    title: '黑夜之主',
+    eyebrow: '第八军团 · 叛军',
+    description:
+      '诞生于诺斯特拉莫被毒云笼罩的天空之下，夜之领主在第一声枪响之前，便已将恐惧本身化作武器。',
+    image: nightLordsImage,
+    imagePosition: '66% center',
+    facts: [
+      { label: '原体', value: '康拉德·科兹' },
+      { label: '战术', value: '恐惧突袭' },
+    ],
+  },
+  {
+    id: 'raven-guard',
+    label: '暗鸦守卫',
+    title: '自暗影而来',
+    eyebrow: '第十九军团 · 忠诚派',
+    description:
+      '暗鸦守卫从隐蔽处发动突袭，在瓦解更强大的敌军后，再度消失于黑暗之中。',
+    image: ravenGuardImage,
+    imagePosition: '50% 42%',
+    facts: [
+      { label: '原体', value: '科沃斯·科拉克斯' },
+      { label: '战术', value: '暗影战' },
+    ],
+  },
+  {
+    id: 'imperial-fists',
+    label: '帝国之拳',
+    title: '最后的高墙',
+    eyebrow: '第七军团 · 忠诚派',
+    description:
+      '帝国之拳是永不退让的守卫者与攻城大师。当其他防线尽数崩溃，他们依然坚守原地。',
+    image: imperialFistsImage,
+    imagePosition: '50% 38%',
+    facts: [
+      { label: '原体', value: '罗格·多恩' },
+      { label: '战术', value: '围城防御' },
+    ],
+  },
+  {
+    id: 'iron-warriors',
+    label: '钢铁勇士',
+    title: '钢铁在内',
+    eyebrow: '第四军团 · 叛军',
+    description:
+      '钢铁勇士冷酷、缜密，并为消耗战而生。在他们眼中，任何堡垒都只是时间与火力的问题。',
+    image: ironWarriorsImage,
+    imagePosition: '52% 44%',
+    facts: [
+      { label: '原体', value: '佩图拉博' },
+      { label: '战术', value: '围城战' },
+    ],
+  },
+  {
+    id: 'salamanders',
+    label: '火蜥蜴',
+    title: '烈焰不熄',
+    eyebrow: '第十八军团 · 忠诚派',
+    description:
+      '火蜥蜴军团以坚韧、荣誉与对凡人的守护闻名。他们踏过烈焰，以近距离的毁灭性火力迎击帝皇之敌。',
+    image: salamandersImage,
+    imagePosition: '50% 36%',
+    facts: [
+      { label: '原体', value: '伏尔甘' },
+      { label: '战术', value: '烈焰突击' },
+    ],
+  },
+]
 
 export function App() {
-  const [animationKey, setAnimationKey] = useState(0)
-
   return (
-    <main className="min-h-screen bg-[#f5f5f7] px-5 py-8 text-[#1d1d1f] sm:px-8 sm:py-12">
-      <div className="mx-auto max-w-3xl">
-        <header className="mb-10 sm:mb-14">
-          <p className="mb-3 text-xs font-semibold tracking-[0.2em] text-black/45 uppercase">
-            XK Component · 001
-          </p>
-          <h1 className="text-4xl font-semibold tracking-[-0.045em] sm:text-6xl">
-            Border Stream Light
-          </h1>
-          <p className="mt-4 max-w-xl text-base leading-7 text-black/55">
-            四层模糊色块沿容器顶部展开，形成轻盈、连续的彩色边缘流光。
-          </p>
-        </header>
-
-        <article className="relative min-h-[440px] overflow-hidden rounded-[28px] border border-black/[0.06] bg-white shadow-[0_18px_60px_rgba(0,0,0,0.08)]">
-          <BorderStreamLight key={animationKey} />
-
-          <div className="absolute inset-0 flex flex-col justify-between p-7 sm:p-9">
-            <div className="flex items-center justify-between text-xs font-medium tracking-[0.14em] text-black/35 uppercase">
-              <span>Top Border</span>
-              <span>Tailwind CSS</span>
-            </div>
-
-            <div>
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-black text-sm font-semibold tracking-[-0.05em] text-white shadow-lg">
-                BSL
-              </div>
-              <h2 className="text-2xl font-semibold tracking-[-0.035em]">
-                顶部边缘流光
-              </h2>
-              <p className="mt-2 text-sm leading-6 text-black/50">
-                从容器上方进入，由蓝、紫、粉、橙四色交叠展开。
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <section
-          aria-labelledby="component-settings"
-          className="mt-5 flex items-center justify-between rounded-2xl border border-black/[0.06] bg-white p-5 shadow-sm"
-        >
-          <div>
-            <h2
-              id="component-settings"
-              className="text-sm font-semibold text-black/80"
-            >
-              组件配置
-            </h2>
-            <p className="mt-1 text-sm text-black/45">重新播放边缘流光动画</p>
-          </div>
-
-          <button
-            type="button"
-            onClick={() => setAnimationKey((key) => key + 1)}
-            className="rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-medium transition hover:border-black/20 hover:bg-black/[0.02] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-          >
-            重播
-          </button>
-        </section>
-      </div>
+    <main className="h-dvh w-full overflow-hidden bg-[#101417]">
+      <ExpandingColumnMenu
+        className="h-full w-full"
+        items={menuItems}
+      />
     </main>
   )
 }
